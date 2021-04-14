@@ -1,7 +1,7 @@
 <template>
     <header>
-        <button><router-link to="/">Todos</router-link></button>
-        <button><router-link  :to="{ name: 'AddTask'
+        <button><router-link class="font" to="/">Todos</router-link></button>
+        <button><router-link class="font" :to="{ name: 'AddTask'
              }">Add</router-link></button>
     </header>
 </template>
