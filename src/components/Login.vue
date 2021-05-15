@@ -19,7 +19,7 @@
             </div>
 
             <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
-
+            <p class="text-left mt-2 mb-4" v-if="userNotFound">Username or Password is incorrect</p>
             <p class="forgot-password text-right mt-2 mb-4">
                 <router-link to="/forgot-password">Forgot password ?</router-link>
             </p>
@@ -45,6 +45,7 @@ export default {
     return {
         email: "",
         password: "",
+        userNotFound: false
     }
   },
   methods: {
@@ -78,6 +79,7 @@ export default {
                     })
                     .catch(function (error) {
                         console.error(error.response);
+                        this.userNotFound = true;
                     });
                     
                 }
