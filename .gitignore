@@ -12,3 +12,9 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+# local data and secrets
+.env
+sqlitedb
+*.sqlite
+*.db

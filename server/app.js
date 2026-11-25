@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
-const db = new DB("sqlitedb")
+const db = new DB(config.dbFile)
 const app = express();
 const router = express.Router();
 

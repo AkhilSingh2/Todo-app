@@ -1,21 +1,23 @@
-# todo
+# Todo app (Vue + Express)
 
-> A Vue.js project
+An early full-stack project (2021): a task manager with sign-up and login, drag-and-drop task lists, task status, and an admin view.
 
-## Build Setup
+## Features
+- Register, log in and forgot-password screens; JWT auth with bcrypt-hashed passwords on an Express API
+- Add, edit and reorder tasks with vuedraggable; status board
+- Admin registration and an admin page
+- SQLite persistence
 
-``` bash
-# install dependencies
+## Tech stack
+Vue 2 · Vuex · Vue Router · Bootstrap · axios · Node/Express · JWT · bcrypt · SQLite
+
+## Run
+```bash
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+cp .env.example .env    # set JWT_SECRET
+set -a; . ./.env; set +a
+npm run server          # Express API on :3000 (creates the SQLite file on first run)
+npm run dev             # Vue SPA on :8080
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+> Archived: an early learning project, kept for reference.
