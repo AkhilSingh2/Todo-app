@@ -1,4 +1,5 @@
 "use strict";
+require('./load-env')();
 const express = require('express');
 const DB = require('./db');
 const config = require('./config');
@@ -72,8 +73,14 @@ router.post('/login', (req, res) => {
 
 app.use(router)
 
-let port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-let server = app.listen(port, function() {
-    console.log('Express server listening on port ' + port)
+db.migrate(function (err) {
+    if (err) {
+        console.error('Failed to initialize the database:', err.message);
+        process.exit(1);
+    }
+    app.listen(port, function () {
+        console.log('Express server listening on port ' + port);
+    });
 });
